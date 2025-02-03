@@ -2,7 +2,7 @@
 
 ## **Overview**  
 The **HNG12 Public API** is a simple RESTful API that returns essential information, including:  
-- The registered email address (used for HNG12 Slack workspace).  
+- The registered email address.  
 - The current date and time in **ISO 8601 format (UTC)**.  
 - The **GitHub repository URL** of this project.  
 
@@ -112,7 +112,7 @@ By default, all origins are allowed (`*`). Update `main.py` to restrict access i
 
 ## **Version Control & Contribution**  
 ### **GitHub Repository:**  
-🔗 [https://github.com/yourusername/your-repo]([https://github.com/yourusername/your-repo](https://github.com/Cashie11/HNG_backend_stage_0.git))  
+🔗 [https://github.com/Cashie11/HNG_backend_stage_0.git))  
 
 ### **Contributing**  
 We welcome contributions! To contribute:  
