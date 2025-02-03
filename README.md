@@ -1,57 +1,143 @@
-# HNG Basic info Task API
+# **HNG12 Public API**  
 
-This is a simple API that returns my email, the current datetime in ISO 8601 format, and the GitHub URL of the project.
+## **Overview**  
+The **HNG12 Public API** is a simple RESTful API that returns essential information, including:  
+- The registered email address (used for HNG12 Slack workspace).  
+- The current date and time in **ISO 8601 format (UTC)**.  
+- The **GitHub repository URL** of this project.  
 
-## API Documentation
-- **Base URL**: `https://your-api-url.com/`
-- **Method**: `GET`
-- **Response**:
-### Endpoint
-**GET** `/`
+This API is built using **FastAPI** and follows best practices for performance, security, and deployment.  
 
-HOW TO SETUP
-1.Install Python: Ensure Python 3.7+ is installed on your system.
+---
 
-2.Install FastAPI and Uvicorn:
-pip install fastapi uvicorn
+## **API Endpoint**  
 
-3.Create a file named main.py:
-4.write your code
-from fastapi import FastAPI
-from datetime import datetime
-from fastapi.middleware.cors import CORSMiddleware
+### **Base URL:**  
+```
+https://your-api-url.com/
+```
 
-app = FastAPI()
+### **Request Method:**  
+```http
+GET /
+```
 
-# Enable CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
-)
-
-@app.get("/")
-def get_info():
-    return {
-        "email": "your-email@example.com",  
-        "current_datetime": datetime.utcnow().isoformat() + "Z",
-        "github_url": "https://github.com/yourusername/your-repo",  
-    }
-
-5.Run the API locally using Uvicorn:
-uvicorn main:app --reload
-
-6.Open your browser or use a tool like Postman or curl to test the API:
-http://127.0.0.1:8000/
-
-7.You should see the following JSON response:
-
-
-### Response
+### **Response Format (200 OK)**  
 ```json
 {
   "email": "your-email@example.com",
   "current_datetime": "2025-01-30T09:30:00Z",
   "github_url": "https://github.com/yourusername/your-repo"
 }
+```
+
+| Field            | Type   | Description                                        |
+|-----------------|--------|----------------------------------------------------|
+| `email`         | string | The registered email address.                      |
+| `current_datetime` | string | The current date and time in ISO 8601 format (UTC). |
+| `github_url`    | string | The GitHub repository URL of this project.        |
+
+---
+
+## **Getting Started**  
+
+### **Prerequisites**  
+Ensure you have the following installed on your system:  
+- **Python 3.8+**  
+- **Git**  
+
+### **Installation & Running Locally**  
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/yourusername/your-repo.git
+   cd your-repo
+   ```
+
+2. **Create a virtual environment**  
+   ```bash
+   python -m venv env
+   ```
+
+3. **Activate the virtual environment**  
+   - **Windows:**  
+     ```bash
+     env\Scripts\activate
+     ```
+   - **Mac/Linux:**  
+     ```bash
+     source env/bin/activate
+     ```
+
+4. **Install dependencies**  
+   ```bash
+   pip install fastapi uvicorn
+   ```
+
+5. **Run the API locally**  
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+6. **Access the API in your browser or via cURL/Postman**  
+   - Open: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)  
+   - API Docs (Swagger UI): [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
+   - Redoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)  
+
+---
+
+## **Deployment**  
+To deploy this API, you can use **Render, Railway, or Vercel**.  
+
+### **Deployment on Render (Recommended)**  
+1. Create a **free account** at [Render](https://render.com/).  
+2. Click **New Web Service** and connect your GitHub repo.  
+3. Set the **Build Command**:  
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Set the **Start Command**:  
+   ```bash
+   uvicorn main:app --host 0.0.0.0 --port 10000
+   ```
+5. Click **Deploy** and get your **API URL**.  
+
+---
+
+## **CORS Handling**  
+This API includes **Cross-Origin Resource Sharing (CORS)** support to allow external clients to access the API.  
+By default, all origins are allowed (`*`). Update `main.py` to restrict access if needed.  
+
+---
+
+## **Version Control & Contribution**  
+### **GitHub Repository:**  
+🔗 [https://github.com/yourusername/your-repo]([https://github.com/yourusername/your-repo](https://github.com/Cashie11/HNG_backend_stage_0.git))  
+
+### **Contributing**  
+We welcome contributions! To contribute:  
+1. Fork the repository.  
+2. Create a new branch:  
+   ```bash
+   git checkout -b feature-branch
+   ```
+3. Make your changes and commit:  
+   ```bash
+   git commit -m "Added new feature"
+   ```
+4. Push changes:  
+   ```bash
+   git push origin feature-branch
+   ```
+5. Open a **Pull Request** on GitHub.  
+
+---
+
+## **License**  
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.  
+
+---
+
+## **Contact**  
+For any questions or support, feel free to reach out via email:  
+📧 frankizuchukwu094@gmail.com
