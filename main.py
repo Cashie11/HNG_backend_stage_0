@@ -18,5 +18,5 @@ def get_info():
     return {
         "email": "frankizuchukwu094@gmail.com",  # my email
         "current_datetime": datetime.utcnow().isoformat() + "Z",
-        "github_url": "https://github.com/Cashie11/weather_api.git",  # my Git repo
+        "github_url": "https://github.com/Cashie11/HNG_backend_stage_0.git",  # my Git repo
     }
